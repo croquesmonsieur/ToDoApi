@@ -38,6 +38,8 @@ namespace TodoApi
            //     opt.UseInMemoryDatabase("TodoList"));
             services.AddDbContext<TodoContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("TodoContext")));
+            services.AddDbContext<ClimberContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("ClimberContext")));
 
         }
 
@@ -50,6 +52,9 @@ namespace TodoApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TodoApi v1"));
             }
+            app.UseDefaultFiles();
+            
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 

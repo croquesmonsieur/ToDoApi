@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Krj1y4KNRKXgRtUxE2wzyAyx3AGs+qmFGrSLQQGi1Css3KFssqXcdrMHOSuJgUPBsJyNv343eTzSuClikknifg==",
+  "dgSpecHash": "vdoB0aiHZ1tmCor9t3tTMw0x8KQiXZiKMXaF5BkJ4OTJVE8ld47rHc4io2JaccfDadA+Dp+N/9vRrnRKl2KekQ==",
   "success": true,
   "projectFilePath": "/home/jens/js_challenges/2.The-Hills/dotnet/ToDoApi/TodoApi/TodoApi.csproj",
   "expectedPackageFiles": [
