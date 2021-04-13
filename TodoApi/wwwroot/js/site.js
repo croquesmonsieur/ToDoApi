@@ -1,4 +1,4 @@
-const uri = 'api/TodoItems';
+const uri = 'api/Climber';
 let todos = [];
 
 function getItems() {
@@ -10,10 +10,14 @@ function getItems() {
 
 function addItem() {
     const addNameTextbox = document.getElementById('add-name');
+    const addstyleTextbox = document.getElementById('add-style');
+    const addDateTextbox = document.getElementById('date');
 
     const item = {
         isComplete: false,
-        name: addNameTextbox.value.trim()
+        name: addNameTextbox.value.trim(),
+        style: addstyleTextbox.value.trim(),
+        dateOfBirth: addDateTextbox.value
     };
 
     fetch(uri, {
@@ -28,6 +32,9 @@ function addItem() {
         .then(() => {
             getItems();
             addNameTextbox.value = '';
+            addstyleTextbox.value = '';
+            addDateTextbox.value = '';
+            
         })
         .catch(error => console.error('Unable to add item.', error));
 }
@@ -42,8 +49,10 @@ function deleteItem(id) {
 
 function displayEditForm(id) {
     const item = todos.find(item => item.id === id);
-
+    
     document.getElementById('edit-name').value = item.name;
+    document.getElementById('edit-style').value = item.style;
+    document.getElementById('edit-date').value = item.dateOfBirth;
     document.getElementById('edit-id').value = item.id;
     document.getElementById('edit-isComplete').checked = item.isComplete;
     document.getElementById('editForm').style.display = 'block';
@@ -54,7 +63,9 @@ function updateItem() {
     const item = {
         id: parseInt(itemId, 10),
         isComplete: document.getElementById('edit-isComplete').checked,
-        name: document.getElementById('edit-name').value.trim()
+        name: document.getElementById('edit-name').value.trim(),
+        style: document.getElementById('edit-style').value.trim(),
+        dateOfBirth: document.getElementById('edit-date').value.trim()
     };
 
     fetch(`${uri}/${itemId}`, {
@@ -78,7 +89,7 @@ function closeInput() {
 }
 
 function _displayCount(itemCount) {
-    const name = (itemCount === 1) ? 'to-do' : 'to-dos';
+    const name = (itemCount === 1) ? 'Climber' : 'Climbers';
 
     document.getElementById('counter').innerText = `${itemCount} ${name}`;
 }
@@ -111,14 +122,22 @@ function _displayItems(data) {
         td1.appendChild(isCompleteCheckbox);
 
         let td2 = tr.insertCell(1);
-        let textNode = document.createTextNode(item.name);
-        td2.appendChild(textNode);
+        let textNodeName = document.createTextNode(item.name);
+        td2.appendChild(textNodeName);
 
         let td3 = tr.insertCell(2);
-        td3.appendChild(editButton);
+        let textNodeStyle = document.createTextNode(item.style);
+        td3.appendChild(textNodeStyle);
 
         let td4 = tr.insertCell(3);
-        td4.appendChild(deleteButton);
+        let textNodeDate = document.createTextNode(item.dateOfBirth);
+        td4.appendChild(textNodeDate);
+
+        let td5 = tr.insertCell(4);
+        td5.appendChild(editButton);
+
+        let td6 = tr.insertCell(5);
+        td6.appendChild(deleteButton);
     });
 
     todos = data;

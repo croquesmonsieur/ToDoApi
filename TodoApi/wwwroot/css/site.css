@@ -8,8 +8,7 @@ input[type='submit'], button, [aria-label] {
 
 table {
     font-family: Arial, sans-serif;
-    border: 1px solid;
-    border-collapse: collapse;
+    color: #ffd8d8;
 }
 
 th {
@@ -20,4 +19,55 @@ th {
 td {
     border: 1px solid;
     padding: 5px;
+}
+
+body {
+    background-image: url("../images/pexels-ron-lach-6677387.jpg");
+}
+
+h1{
+    text-align: center;
+    font-family: Neon_Font;
+    color: #ffd8d8;
+    text-shadow:
+            .1vw 0vw .5vw #ffd8d8, .2vw 0vw .5vw #ffd8d8, .4vw 0vw .5vw #ffd8d8,
+            .1vw 0vw   5vw #f25757, .2vw 0vw   10vw #f25757, .4vw 0vw   10vw #f25757,
+            .1vw 0vw  .1vw #f25757, .2vw 0vw  .1vw #f25757, .4vw 0vw  .1vw #f25757,
+            .1vw 0vw   2vw #f25757, .2vw 0vw   2vw #f25757, .4vw 0vw   2vw #f25757,
+            .1vw 0vw   1vw #e50b0b, .2vw 0vw   1vw #e50b0b, .4vw 0vw   5vw #e50b0b,
+            .1vw 0vw   5vw #e50b0b, .2vw 0vw  20vw #e50b0b, .4vw 0vw  10vw #e50b0b,
+            .1vw 0vw  10vw #e50b0b, .2vw 0vw  30vw #e50b0b,.4vw 0vw  10vw #e50b0b;
+}
+
+h3{
+    text-align: center;
+    font-family: Neon_Font;
+}
+
+p{
+    text-align: center;
+    font-family: Neon_Font;
+    color: #ffd8d8;
+    font-size: 26px;
+    text-shadow: .1vw 0vw  10vw #e50b0b, .2vw 0vw  30vw #e50b0b,.4vw 0vw  10vw #e50b0b;
+}
+
+.addStuff{
+    display: flex;
+    justify-content: center;
+    border: 3px solid black;
+    width: 750px;
+    margin: auto;
+    background-color: rgba(24,231,10,0.2);
+}
+
+.formStyle{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+@font-face {
+    font-family: 'Neon_Font';
+    src: url("../includes/Neoneon-3zaD6.otf");
 }

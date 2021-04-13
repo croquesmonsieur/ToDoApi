@@ -1,3 +1,5 @@
+using System;
+
 namespace TodoApi.Models
 {
     public class Climbers
@@ -6,5 +8,6 @@ namespace TodoApi.Models
         public string Name { get; set; }
         public string style { get; set; }
         public bool retired { get; set; }
+        public string dateOfBirth { get; set; }
     }
 }
